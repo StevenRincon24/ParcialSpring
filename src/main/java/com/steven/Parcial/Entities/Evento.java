@@ -19,13 +19,8 @@ public class Evento {
     private LocalDate fecha;
     @Column
     private Float costo;
-    @OneToMany(mappedBy = "evento")
-    @JsonIgnoreProperties("evento")
-    private List<Actividad> actividades;
 
-    @ManyToMany(mappedBy = "eventos")
-    @JsonIgnoreProperties("evento")
-    private List<Participante> participantes;
+
     public Evento() {
     }
 
@@ -68,19 +63,7 @@ public class Evento {
         this.costo = costo;
     }
 
-    public List<Actividad> getActividades() {
-        return actividades;
-    }
 
-    public List<Participante> getParticipantes() {
-        return participantes;
-    }
 
-    public void setActividades(List<Actividad> actividades) {
-        this.actividades = actividades;
-    }
 
-    public void setParticipantes(List<Participante> participantes) {
-        this.participantes = participantes;
-    }
 }

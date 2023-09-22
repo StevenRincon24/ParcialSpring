@@ -16,15 +16,15 @@ public class Actividad {
     @Column
     private LocalDate fecha;
     @Column
-    private String tipo; // Puede ser "Conferencia", "Ponencia" o "Taller"
+    private String tipo;
 
     @ManyToOne
     @JoinColumn(name = "evento_id")
-    @JsonIgnoreProperties("evento")
+    @JsonIgnoreProperties("participantesEventos")
     private Evento evento;
     @ManyToOne
     @JoinColumn(name = "participante_id")
-    @JsonIgnoreProperties("evento")
+
     private Participante participante;
 
     public Participante getParticipante() {
@@ -38,12 +38,13 @@ public class Actividad {
     public Actividad() {
     }
 
-    public Actividad(Long id, String nombre, LocalDate fecha, String tipo, Evento evento) {
+    public Actividad(Long id, String nombre, LocalDate fecha, String tipo, Evento evento, Participante participante) {
         this.id = id;
         this.nombre = nombre;
         this.fecha = fecha;
         this.tipo = tipo;
         this.evento = evento;
+        this.participante = participante;
     }
 
     public Long getId() {

@@ -33,26 +33,6 @@ public class Event {
 
     }
 
-    @GetMapping("/{eventoId}/participantes")
-    public ResponseEntity<List<Participante>> obtenerParticipantesPorEvento(@PathVariable Long eventoId) {
-        List<Participante> participantes = eventoService.obtenerParticipantesPorEvento(eventoId);
-        return new ResponseEntity<>(participantes, HttpStatus.OK);
-    }
-
-    @GetMapping("/{participanteId}/agenda")
-    public ResponseEntity<List<Actividad>> obtenerAgendaDelParticipanteEnEvento(
-            @PathVariable Long participanteId, @RequestParam Long eventoId) {
-        List<Actividad> agenda = participanteService.obtenerAgendaDelParticipanteEnEvento(participanteId, eventoId);
-        return new ResponseEntity<>(agenda, HttpStatus.OK);
-    }
-
-
-
-    @GetMapping("/valor-total-inscripciones")
-    public ResponseEntity<Float> obtenerValorTotalInscripciones() {
-        Float valorTotal = eventoService.obtenerValorTotalInscripciones();
-        return new ResponseEntity<>(valorTotal, HttpStatus.OK);
-    }
 
 
 

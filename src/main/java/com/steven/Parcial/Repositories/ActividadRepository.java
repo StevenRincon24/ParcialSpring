@@ -1,8 +1,6 @@
 package com.steven.Parcial.Repositories;
 
 import com.steven.Parcial.Entities.Actividad;
-import com.steven.Parcial.Entities.Evento;
-import com.steven.Parcial.Entities.Inscripcion;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
